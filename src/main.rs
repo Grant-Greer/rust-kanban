@@ -2,6 +2,7 @@
 
 type StdErr = Box<dyn std::error::Error>;
 mod logger;
+mod models;
 fn main() -> Result<(), StdErr> {
     // loads env variables from .env
     dotenv::dotenv()?;
