@@ -1,8 +1,12 @@
 // src/main.rs
+#[macro_use]
+extern crate diesel;
 
 type StdErr = Box<dyn std::error::Error>;
 mod logger;
 mod models;
+mod schema;
+
 fn main() -> Result<(), StdErr> {
     // loads env variables from .env
     dotenv::dotenv()?;

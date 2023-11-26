@@ -11,3 +11,5 @@ chrono = {version = "0.4.31", features = ["serde"]}
 log = "0.4.20"
 fern = "0.6.2"
 serde = { version = "1.0.130", features = ["derive"] }
+diesel = { version = "2.1.4", features = ["postgres", "chrono"] }
+diesel-derive-enum = { version = "2.1.0", features = ["postgres"] }

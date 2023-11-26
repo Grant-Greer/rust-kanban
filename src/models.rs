@@ -1,5 +1,5 @@
 // src/models.rs
-
+use crate::schema::*;
 // for GET requests
 
 #[derive(serde::Serialize)]
@@ -20,8 +20,10 @@ pub struct Card {
     pub created_at: chrono::DateTime<chrono::Utc>,
 }
 
-#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Debug)]
+#[derive(serde::Serialize, serde::Deserialize, diesel_derive_enum::DbEnum)]
 #[serde(rename_all = "camelCase")]
+#[DieselType = "Status_enum"]
 pub enum Status {
     Todo,
     Doing,
